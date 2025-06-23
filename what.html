@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why Retro?</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="bo-scr"></div>
+    <nav>
+      <h1>Retro stuff</h1>
+      <ul>
+        <li><a href="index.html">Why</a></li>
+        <li><a href="what.html">What</a></li>
+      </ul>
+    </nav>
+
+    <section id="first1">
+      <div class="ovl"></div>
+      <h1 class="glitch-text">Why simplicity wins</h1>
+      <p>
+        Back then, games did not need 4K textures or million GB installs. They just
+        needed a heart (not the undertale one lol). No distractions, no ads, just gameplay!
+      </p>
+    </section>
+
+    <section id="second1">
+        <div class="ovl1"></div>
+      <h1 class="glitch">Why pixels hit different</h1>
+      <p>
+        Each pixel was a building block of your imagination. Low-res never meant
+        low-impact — it meant *you* filled the gaps!
+      </p>
+    </section>
+
+    <section id="third1">
+        <div class="ovl2"></div>
+      <h1 class="glitch">Why retro == creative freedom</h1>
+      <p>
+        Confined by limits, developers made miracles. You did nog need ray-tracing to feel
+        wonder — just a square block jumping into a dangerous sunset.
+      </p>
+    </section>
+
+    <script>
+      const boScr = document.getElementById("bo-scr");
+      const lines = [
+        "BOOTING RETRO OS...",
+        "Loading 8-bit modules...",
+        "Applying CRT shaders...",
+        "Pixel check complete.",
+        "Welcome back, Adventurer.",
+      ];
+      let current = 0;
+
+      function shLine() {
+        if (current < lines.length) {
+          const line = document.createElement("div");
+          line.textContent = lines[current++];
+          boScr.appendChild(line);
+          setTimeout(shLine, 500);
+        } else {
+          setTimeout(() => boScr.remove(), 1000);
+        }
+      }
+      shLine();
+
+      function createPx() {
+        const pixel = document.createElement("div");
+        pixel.className = "pixel";
+        pixel.style.left = Math.random() * 100 + "vw";
+        pixel.style.animationDuration = 1 + Math.random() * 2 + "s";
+        document.body.appendChild(pixel);
+        setTimeout(() => pixel.remove(), 3000);
+      }
+
+      setInterval(createPx, 80);
+      const glEl = document.querySelectorAll(".glitch-text");
+
+      glEl.forEach((el) => {
+        const original = el.textContent;
+
+        el.addEventListener("mouseenter", () => {
+          let i = 0;
+          const interval = setInterval(() => {
+            el.textContent = scramble(original, 0.3);
+            i++;
+            if (i > 10) {
+              clearInterval(interval);
+              el.textContent = original;
+            }
+          }, 50);
+        });
+      });
+
+      function scramble(text, intensity = 0.3) {
+        const chars = "!@#$%^&*()_+=<>?/\\|~";
+        return text
+          .split("")
+          .map((char) =>
+            Math.random() < intensity && char !== " "
+              ? chars[Math.floor(Math.random() * chars.length)]
+              : char
+          )
+          .join("");
+      }
+    </script>
+  </body>
+</html>

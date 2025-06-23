@@ -1,0 +1,410 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", cursive;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+  z-index: 12;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  text-shadow: 3px 4px 3px #121212;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#first {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#first h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: #ffffffc9;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  z-index: 2;
+}
+
+#first {
+  background-image: url("https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_smnBje0EYYGNNnZVvuUcuo2QDeCKQ2o1TC4b0UODSkfBx7_eHXbG1n0vXGTSLqCEn2xM9DUkyU5bM5POBdfv75kw=s0-d");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  image-rendering: pixelated;
+}
+
+.ovl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.461);
+  z-index: 1;
+}
+
+nav ul li a:hover {
+  color: #00ff99;
+}
+
+#snake-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: visible !important;
+  pointer-events: none;
+  box-shadow: 0 0 6px #00ff99, 0 0 10px #00ff99;
+  z-index: 9999;
+}
+
+.snake-seg {
+  width: 20px;
+  height: 20px;
+  background-color: #00ff99;
+  position: absolute;
+  border-radius: 3px;
+  z-index: 9999;
+  transition: transform 0.05s linear;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+#second {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #121212;
+  padding: 20px;
+}
+
+.con {
+  width: 100%;
+  max-width: 800px;
+  background-color: rgba(18, 18, 18, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+#second img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.con h2 {
+  font-size: 2rem;
+  color: #ffffffc9;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.con p {
+  font-size: 1.2rem;
+  color: #ffffffc9;
+  text-align: center;
+  margin-bottom: 20px;
+  word-spacing: 2px;
+}
+
+#third {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#third img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#fourth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#fourth img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(33, 33, 33, 0.3);
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 20px;
+}
+
+footer p {
+  margin: 10px;
+  width: 70%;
+  text-align: center;
+}
+
+hr {
+  width: 40%;
+  height: 1px;
+  background-color: #ffffffc9;
+  margin: 0 auto;
+}
+
+.curs {
+  color: #00ff99;
+  display: inline-block;
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hovspan:hover {
+  color: #00ff99;
+  cursor: pointer;
+  font-size: 2.1rem;
+  transition: color 0.3s ease;
+}
+
+/* Second page */
+
+#boot-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    color: #00ff99;
+    font-family: monospace;
+    font-size: 1.1rem;
+    padding: 40px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .pixel {
+    position: fixed;
+    top: 0;
+    width: 8px;
+    height: 8px;
+    background: #00ff99;
+    opacity: 0.6;
+    animation: fall linear;
+    z-index: 999;
+    pointer-events: none;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(110vh);
+    }
+  }
+
+  .glitch:hover {
+    animation: glitch 0.5s steps(2, start) infinite;
+    color: #ff0066;
+    text-shadow: 2px 2px #00ff99, -2px -2px #ff00ff;
+  }
+
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+    25% {
+      transform: translate(-2px, 2px);
+    }
+    50% {
+      transform: translate(2px, -2px);
+    }
+    75% {
+      transform: translate(-1px, 1px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+
+  #first1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #first1 h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #ffffffc9;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    z-index: 2;
+    margin-bottom: 50px;
+  }
+  
+  #first1 {
+    background-image: url("https://i.pinimg.com/originals/f0/4a/0f/f04a0f964e22f64a08e892c9496f1864.gif");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    image-rendering: pixelated;
+  }
+
+  #firs1 p{
+    font-size: 1.2rem;
+    color: #e1e1e1c9;
+    text-align: center;
+    margin-bottom: 20px;
+    word-spacing: 2px;
+    z-index: 2;
+    width: 80%;
+  }
+
+#second1 {
+  display: flex;
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #121212;
+  padding: 20px;
+  background-image: url("https://i0.wp.com/media2.giphy.com/media/5vAK2sRnNh6Fi/giphy.gif");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#second1 h1{
+    font-size: 2.5rem;
+    color: #ffffffc9;
+    text-align: center;
+    margin-bottom: 100px;
+    z-index: 2;
+}
+
+#second1 p {
+  font-size: 1.2rem;
+  color: #ffffffc9;
+  text-align: center;
+  word-spacing: 2px;
+  z-index: 2;
+}
+
+#third1 {
+  display: flex;
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-image: url("https://soranews24.com/wp-content/uploads/sites/3/2014/12/pixel-art-1.gif?w=500");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#third1 h1{
+    font-size: 2.5rem;
+    color: #ffffffc9;
+    text-align: center;
+    margin-bottom: 50px;
+    z-index: 2;
+}
+
+#third1 p{
+    font-size: 1.2rem;
+    color: #ffffffc9;
+    text-align: center;
+    word-spacing: 2px;
+    z-index: 2;
+}
+
+#first1, #second1, #third1 {
+    position: relative;
+}
+
+.ovl1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(18, 18, 18, 0.461);
+    z-index: 1;
+}
+
+.ovl2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 18, 18, 0.461);
+    z-index: 1;
+}
